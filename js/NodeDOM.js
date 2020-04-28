@@ -62,8 +62,6 @@ class NodeDOM{
     }
 
     traverse(){
-        this.left? this.left.traverse() : null;
-        console.log(this.value);
-        this.right? this.right.traverse() : null;
+       return `${this.left? this.left.traverse() : ''}${this.value}\n${this.right? this.right.traverse() : ''}`
     }
 }

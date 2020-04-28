@@ -2,13 +2,119 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
-    position: relative;
+h1{
+    margin: 0 2.5rem;
+    padding: 0;
 }
-.tree-interactives{
+
+header{
     position: fixed;
-    left: 0;
-    top: 0;
+    left: .5rem;
+    top: .5rem;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: violet; */
+    width: 100%;
+}
+
+label {
+    font-size: 1.25rem;
+    margin: 0 1rem;
+}
+
+button {
+    background-color: slateblue;
+    border: none;
+    padding: .55rem  .75rem;
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
+    border-radius: .25rem;
+    
+}
+
+button:hover{
+    background-color: rgb(136, 122, 231);
+    cursor: pointer;
+}
+
+button:active{
+    background-color: rgb(67, 56, 141);
+}
+#search-btn{
+    background-color: rgb(221, 75, 49);
+    color: white;
+}
+
+#search-btn:hover{
+    background-color: tomato;
+}
+
+#search-btn:active{
+    background-color: rgb(179, 60, 39);
+}
+
+#traverse-btn{
+    background-color: teal;
+    color: white;
+    margin-left: 1.5rem;
+}
+
+#traverse-btn:hover{
+    background-color: rgb(8, 172, 172);
+
+}
+
+#traverse-btn:active{
+    background-color: rgb(0, 78, 78);
+
+}
+
+input[type=number]{
+    height: 1.75rem;
+    padding: 0.15rem .5rem;
+    margin-right: 1rem;
+    border: solid .1rem #bbb ;
+    border-radius: .25rem;
+    vertical-align: middle;
+    width: 4rem;
+    font-size: 1.25rem;
+}
+
+.title-source{
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.title-source a {
+    color: #333;
+    text-decoration: none;
+}
+
+.title-source a:hover {
+
+    /* text-decoration: underline; */
+    border-bottom: solid .1rem purple;
+
+}
+
+.fa-github{
+    font-size: 1.25rem;
+    margin: 0 .35rem;
+    color: rgb(73, 6, 73);
+}
+
+strong{
+    color: #222;
+}
+
+.tree-interactives{
+
+}
+
+#tree{
+    margin-top: 3.5rem;
 }
 
 .node{

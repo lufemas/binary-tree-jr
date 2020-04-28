@@ -18,6 +18,6 @@ class TreeDOM {
     }
 
     traverse(){
-        this.root.traverse()
+       return this.root.traverse()
     }
 }

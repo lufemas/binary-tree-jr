@@ -16,6 +16,7 @@ const $inputValue = $.getElementById(`input-value`);
 const $insertBtn = $.getElementById(`insert-btn`)
 const $searchBtn = $.getElementById(`search-btn`);
 const $randomBtn = $.getElementById(`random-btn`);
+const $traverseBtn = $.getElementById(`traverse-btn`);
 
 
 tree = new TreeDOM($tree);
@@ -28,9 +29,6 @@ function resetSearch(){
     }
 }
 
-window.addEventListener(`load`,()=>{
-    window.scrollTo($.body.offsetWidth/2,0)
-})
 
 function insertValue(val){
     resetSearch()
@@ -39,6 +37,11 @@ function insertValue(val){
     node ? node.element.getElementsByClassName(`value`)[0].classList.add(`found`) :  null;
     return node;
 }
+
+$traverseBtn.addEventListener(`click`, (e) => {
+    bTree.traverse()
+    alert(tree.traverse())
+})
 
 $insertBtn.addEventListener(`click`, (e) => {
    insertValue(parseInt ($inputValue.value));
@@ -58,7 +61,6 @@ $searchBtn.addEventListener(`click`, (e) => {
 
 $randomBtn.addEventListener(`click`, (e) => {
     const value = Math.round(Math.random() * 100);
-    console.log(value)
     insertValue(  value );
 })
 

@@ -1,10 +1,10 @@
-class Tree {
+class BTree {
     constructor(){
     }
 
     insert(val){
         if(!this.root){
-            this.root = new Node(val)
+            this.root = new BNode(val)
         }else{
             this.root.insert(val);
         }

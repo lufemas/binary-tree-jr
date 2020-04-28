@@ -2,11 +2,23 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+header{
+    position: relative;
+}
+.tree-interactives{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
 .node{
     /* background-color: aquamarine;
     border: solid white; */
     width: 100%;
     margin: 0;
+    border-right: dashed 0.01rem rgb(163, 162, 162);
+    border-bottom: dashed 0.01rem rgb(199, 198, 198);
+    
 }
 
 .node#root{
@@ -15,7 +27,8 @@ body{
 
 .node p {
     text-align: center;
-    
+
+    /* margin: .25rem; */
 }
 
 .value{
@@ -24,11 +37,18 @@ body{
     border-radius: 50%;
     width: auto;
     text-align: center;
-    padding: .5rem;
-    width: 2rem;
-    height:2rem;
+    padding: .25rem;
+    width: .7rem;
+    height: .7rem;
+    font-size: 1rem;
+    line-height: .7rem;
     margin: 0;
     position: relative;
+}
+
+.value.found{
+    background-color: darkgreen;
+    box-shadow: 0rem 0rem 1rem green;
 }
 
 /* .value::before{
@@ -42,10 +62,13 @@ body{
 
 .horizontal-line-center{
     width: 50%;
+    height: 0.25rem;
     border-top: solid black .35rem;
+    border-left: solid black .35rem;
+    border-right: solid black .35rem;
     margin: auto;
-    border-top-left-radius: 3rem;
-    border-top-right-radius: 3rem;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
 }
 
 .left-right-container{
@@ -60,6 +83,7 @@ body{
     margin: 0;
     /* flex-grow: 1; */
     width: 100%;
+    
 
 }
 
@@ -71,6 +95,8 @@ body{
     /* flex-grow: 1; */
 
     width: 100%;
+    
+
 
 
 

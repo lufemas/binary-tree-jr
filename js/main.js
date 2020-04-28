@@ -9,21 +9,62 @@ const nodeHTML = `    <div class="node">
 </div>
 </div>`
 
+const $ = document;
+const $tree = $.getElementById(`tree`);
+
+const $inputValue = $.getElementById(`input-value`);
+const $insertBtn = $.getElementById(`insert-btn`)
+const $searchBtn = $.getElementById(`search-btn`);
+const $randomBtn = $.getElementById(`random-btn`);
+
+
+tree = new TreeDOM($tree);
+const bTree = new BTree();
+
+function resetSearch(){
+    const $values = $.getElementsByClassName(`value`);
+    for( $item of $values){
+        $item.classList.remove(`found`);
+    }
+}
+
+window.addEventListener(`load`,()=>{
+    window.scrollTo($.body.offsetWidth/2,0)
+})
+
+function insertValue(val){
+    resetSearch()
+    const node =  tree.insert( val );
+    bTree.insert(val)
+    node ? node.element.getElementsByClassName(`value`)[0].classList.add(`found`) :  null;
+    return node;
+}
+
+$insertBtn.addEventListener(`click`, (e) => {
+   insertValue(parseInt ($inputValue.value));
+})
+
+$searchBtn.addEventListener(`click`, (e) => {
+    resetSearch()
+    console.log(bTree.search(parseInt ($inputValue.value)));
+   let result = tree.search( parseInt ($inputValue.value));
+   if(result){
+       result.element.getElementsByClassName(`value`)[0].classList.add(`found`);
+       window.scrollTo(result.element.offsetLeft, result.element.offsetTop)
+   }else{
+       alert("Not found")
+   }
+})
+
+$randomBtn.addEventListener(`click`, (e) => {
+    const value = Math.round(Math.random() * 100);
+    console.log(value)
+    insertValue(  value );
+})
 
 
 
-const bTree = new Tree();
+// document.getElementById('asd').appendChild
 
-bTree.insert(10);
-bTree.insert(15);
-bTree.insert(3);
-bTree.insert(8);
-
-console.log(bTree)
-
-console.log(bTree.search(10));
-
-console.log("\n--------")
-bTree.traverse()
 
 

@@ -1,4 +1,4 @@
-class Node {
+class BNode {
     constructor(val){
         this.value = val;
     }
@@ -6,7 +6,7 @@ class Node {
     insert(val){
         if (val < this.value){
             if(!this.left){
-                this.left = new Node(val);
+                this.left = new BNode(val);
                 return this.left;
             }else{
                 this.left.insert(val);
@@ -14,7 +14,7 @@ class Node {
 
         }else{
             if(!this.right){
-                this.right = new Node(val);
+                this.right = new BNode(val);
                 return this.right;
             }else{
                 this.right.insert(val)
